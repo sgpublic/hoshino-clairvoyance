@@ -22,3 +22,13 @@
     ├── miner.py
     └── whois.py
 ```
+
+（可选）修改 `hoshino/config/priconne.py`，追加以下内容：
+
+```python
+class clairvoyance:
+    CLAIRVOYANCE_GIT_URL = "https://github.com/sgpublic/hoshino-clairvoyance"
+    CLAIRVOYANCE_GIT_BRANCH = "resource"
+```
+
+若网络环境不通畅，`CLAIRVOYANCE_GIT_URL` 可使用 `https://gitee.com/sgpublic/hoshino-clairvoyance`
