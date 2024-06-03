@@ -28,13 +28,14 @@ except Exception as _:
 
 
 _last_check_time = 0
-clairvoyance_resource_dir = ResObj("./cache/priconne/clairvoyance").path
+clairvoyance_resource_dir = "./cache/priconne/clairvoyance"
+clairvoyance_resource_obj = ResObj(clairvoyance_resource_dir).path
 
 
 def checkout_clairvoyance():
     global _last_check_time
-    if not os.path.exists(clairvoyance_resource_dir):
-        command = ['git', 'clone', _git_url, '-b', _git_branch, '--depth=1', clairvoyance_resource_dir]
+    if not os.path.exists(clairvoyance_resource_obj):
+        command = ['git', 'clone', _git_url, '-b', _git_branch, '--depth=1', clairvoyance_resource_obj]
         try:
             subprocess.run(command, check=True)
             _last_check_time = time.time()
@@ -43,7 +44,7 @@ def checkout_clairvoyance():
     elif _last_check_time + 24 * 3600 < time.time():
         command = ['git', 'pull']
         try:
-            subprocess.run(command, check=True, cwd=clairvoyance_resource_dir)
+            subprocess.run(command, check=True, cwd=clairvoyance_resource_obj)
             _last_check_time = time.time()
         except subprocess.CalledProcessError as e:
             logger.warn(f"千里眼资源更新失败：{e}")
