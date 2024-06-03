@@ -50,3 +50,5 @@ def checkout_clairvoyance():
 
 
 checkout_clairvoyance()
+
+from .clairvoyance import future_gacha
