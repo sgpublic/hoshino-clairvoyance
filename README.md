@@ -4,7 +4,7 @@
 
 ## 食用方法
 
-删除 Hoshino 中 `hoshino/modules/priconne/query/query.py` 文件，并将本仓库克隆到 `hoshino/modules/priconne`，即（目录结构）：
+注释掉 Hoshino 中 `hoshino/modules/priconne/query/query.py` 文件的所有内容，并将本仓库克隆到 `hoshino/modules/priconne`，即（目录结构）：
 
 ```shell
 (venv) madray@nas:./Hoshino/hoshino/modules$ tree -a ./priconne/
@@ -20,6 +20,7 @@
 └── query
     ├── __init__.py
     ├── miner.py
+    ├── query.py # 注释掉这个文件的所有内容
     └── whois.py
 ```
 
