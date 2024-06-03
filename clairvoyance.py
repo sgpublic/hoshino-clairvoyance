@@ -15,7 +15,7 @@ async def future_gacha(bot, ev):
     filelist.sort()
     msg = [
         MessageSegment.text("千里眼数据来自：Columba-丘比@bilibili\n"),
-        MessageSegment.text("https://www.bilibili.com/read/cv26851697/\n"),
+        MessageSegment.text("https://www.bilibili.com/read/cv15264705/\n"),
     ]
     for file in filelist:
         msg.append(ResImg(os.path.join(clairvoyance_resource_dir, file)).cqcode)
